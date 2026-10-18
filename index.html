@@ -1,82 +1,235 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DoorIQ — Your doorstep, understood</title><link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoorIQ — Your doorstep, understood</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
 <header class="topbar">
-  <a class="brand" href="#"><span class="brand-mark">D<span>Q</span></span><span>Door<span class="violet">IQ</span><small>SMART HOME ASSISTANT</small></span></a>
-  <nav><a href="#workspace">Workspace</a><a href="#how">How it works</a></nav>
-  <div class="top-actions"><span class="prototype"><i></i> Prototype mode</span><button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button></div>
+  <a class="brand" href="#">
+    <span class="brand-mark">D<span>Q</span></span>
+    <span>Door<span class="violet">IQ</span><small>SMART HOME ASSISTANT</small></span>
+  </a>
+  <nav>
+    <a href="#workspace">Workspace</a>
+    <a href="#assistant">Ask DoorIQ</a>
+    <a href="#how">How it works</a>
+  </nav>
+  <div class="top-actions">
+    <span class="prototype"><i></i> Prototype mode</span>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+  </div>
 </header>
+
 <main>
 <section class="hero">
   <div class="hero-copy">
     <p class="eyebrow"><span class="spark">✦</span> YOUR HOME, ONE STEP AHEAD</p>
     <h1>Your doorstep,<br><span class="gradient-text">understood.</span></h1>
-    <p class="hero-text">DoorIQ turns doorbell events into thoughtful next steps — shaped around your preferences, not just another notification.</p>
-    <div class="hero-buttons"><a class="primary-btn" href="#workspace">Try the live demo <span>↘</span></a><a class="secondary-btn" href="#how">Explore how it works</a></div>
-    <div class="trust-row"><span>✦ Preference-aware</span><span>◈ Privacy-first</span><span>✓ You stay in control</span></div>
+    <p class="hero-text">DoorIQ turns doorbell events into thoughtful next steps, shaped around your preferences, not just another notification.</p>
+    <div class="hero-buttons">
+      <a class="primary-btn" href="#assistant">Talk to DoorIQ <span>↘</span></a>
+      <a class="secondary-btn" href="#how">Explore how it works</a>
+    </div>
+    <div class="trust-row">
+      <span>✦ Preference-aware</span>
+      <span>◈ Privacy-first</span>
+      <span>✓ You stay in control</span>
+    </div>
   </div>
   <div class="hero-art" aria-label="Illustration of a smart home door">
     <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-    <div class="door-scene"><div class="door-frame"><div class="door"><div class="door-panel"></div><div class="knob"></div><div class="door-glow"></div></div></div><div class="welcome-mat"></div></div>
-    <div class="floating-card card-event"><div class="mini-icon blue">♧</div><div><small>DOOR EVENT</small><b>Delivery detected</b><span>Just now · Demo event</span></div><span class="tiny-dot"></span></div>
-    <div class="floating-card card-action"><div class="mini-icon purple">✦</div><div><small>DOORIQ SUGGESTS</small><b>Use saved instructions</b><span>Based on your preferences</span></div></div>
+    <div class="door-scene">
+      <div class="door-frame">
+        <div class="door">
+          <div class="door-panel"></div><div class="knob"></div><div class="door-glow"></div>
+        </div>
+      </div>
+      <div class="welcome-mat"></div>
+    </div>
+    <div class="floating-card card-event">
+      <div class="mini-icon blue">♧</div>
+      <div><small>DOOR EVENT</small><b>Delivery detected</b><span>Demo event</span></div>
+      <span class="tiny-dot"></span>
+    </div>
+    <div class="floating-card card-action">
+      <div class="mini-icon purple">✦</div>
+      <div><small>DOORIQ SUGGESTS</small><b>Use saved instructions</b><span>Based on your preferences</span></div>
+    </div>
     <div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="sparkle s3">✦</div>
   </div>
 </section>
 
 <section class="stats">
-  <div><strong id="eventCount">00</strong><span>Demo events explored</span></div><div><strong>4</strong><span>Event scenarios</span></div><div><strong>3</strong><span>Response preferences</span></div><div><strong>100%</strong><span>User-controlled actions</span></div>
+  <div><strong id="eventCount">00</strong><span>Demo events explored</span></div>
+  <div><strong>4</strong><span>Event scenarios</span></div>
+  <div><strong>3</strong><span>Response preferences</span></div>
+  <div><strong>100%</strong><span>User-controlled actions</span></div>
 </section>
 
 <section class="workspace section" id="workspace">
-  <div class="section-heading"><div><p class="eyebrow">INTERACTIVE PLAYGROUND</p><h2>What happened at your door?</h2><p>Choose a scenario and see how the recommendation adapts.</p></div><span class="live-tag"><i></i> Ready to explore</span></div>
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">INTERACTIVE PLAYGROUND</p>
+      <h2>What happened at your door?</h2>
+      <p>Choose an event and see how your recommendation adapts.</p>
+    </div>
+    <span class="live-tag"><i></i> Ready to explore</span>
+  </div>
+
   <div class="demo-grid">
     <div class="control-card">
-      <div class="card-title"><span class="number">01</span><div><h3>Set the scene</h3><p>Choose a sample event</p></div></div>
-      <div class="event-options" id="eventOptions">
-        <button class="event-option selected" data-event="delivery"><span class="event-emoji">📦</span><span><b>Delivery</b><small>A parcel may have arrived</small></span><span class="radio-dot"></span></button>
-        <button class="event-option" data-event="guest"><span class="event-emoji">👋</span><span><b>Expected guest</b><small>Someone you are expecting</small></span><span class="radio-dot"></span></button>
-        <button class="event-option" data-event="unknown"><span class="event-emoji">🔔</span><span><b>Unknown visitor</b><small>A visitor you don't recognize</small></span><span class="radio-dot"></span></button>
-        <button class="event-option" data-event="bell"><span class="event-emoji">🚪</span><span><b>Doorbell pressed</b><small>A doorbell event occurred</small></span><span class="radio-dot"></span></button>
+      <div class="card-title">
+        <span class="number">01</span>
+        <div><h3>Set the scene</h3><p>Choose a sample event</p></div>
       </div>
+
+      <div class="event-options" id="eventOptions">
+        <button class="event-option selected" data-event="delivery">
+          <span class="event-emoji">📦</span><span><b>Delivery</b><small>A parcel may have arrived</small></span><span class="radio-dot"></span>
+        </button>
+        <button class="event-option" data-event="guest">
+          <span class="event-emoji">👋</span><span><b>Expected guest</b><small>Someone you are expecting</small></span><span class="radio-dot"></span>
+        </button>
+        <button class="event-option" data-event="unknown">
+          <span class="event-emoji">🔔</span><span><b>Unknown visitor</b><small>A visitor you don't recognize</small></span><span class="radio-dot"></span>
+        </button>
+        <button class="event-option" data-event="bell">
+          <span class="event-emoji">🚪</span><span><b>Doorbell pressed</b><small>A doorbell event occurred</small></span><span class="radio-dot"></span>
+        </button>
+      </div>
+
       <label class="field-label" for="preference">Your current situation</label>
       <select id="preference">
         <option value="busy">🎧 I'm busy — keep interruptions low</option>
         <option value="available">🙋 I'm available to respond</option>
         <option value="safe">🛡️ Prioritize privacy and safety</option>
       </select>
+
       <label class="field-label" for="customNote">Optional household note</label>
       <input id="customNote" type="text" maxlength="90" placeholder="e.g. Leave parcels by the side entrance">
+
       <button id="translateBtn" class="primary-btn full">Translate this event <span>✦</span></button>
-      <p class="tiny-note">Demo only: events are simulated and nothing is sent to a device.</p>
+      <p class="tiny-note">Demo only: events are simulated. Nothing is sent to a device.</p>
     </div>
+
     <div class="recommendation-card">
-      <div class="rec-top"><span class="rec-label"><span class="spark">✦</span> PERSONALIZED RECOMMENDATION</span><span id="urgency" class="urgency calm">LOW INTERRUPT</span></div>
-      <div class="rec-main"><div id="recIcon" class="rec-icon">📦</div><div><p id="recKicker" class="eyebrow">DELIVERY EVENT</p><h3 id="recTitle">A delivery may be arriving</h3><p id="recBody">If your courier permits it, use your saved delivery instructions to request a drop-off at your designated safe place.</p></div></div>
+      <div class="rec-top">
+        <span class="rec-label"><span class="spark">✦</span> PERSONALIZED RECOMMENDATION</span>
+        <span id="urgency" class="urgency calm">LOW INTERRUPT</span>
+      </div>
+      <div class="rec-main">
+        <div id="recIcon" class="rec-icon">📦</div>
+        <div>
+          <p id="recKicker" class="eyebrow">DELIVERY EVENT</p>
+          <h3 id="recTitle">A delivery may be arriving</h3>
+          <p id="recBody">Use your saved delivery instructions if appropriate.</p>
+        </div>
+      </div>
       <div id="personalNote" class="personal-note hidden"></div>
-      <div class="why-box"><span class="why-icon">◎</span><div><b>Why this suggestion?</b><p id="whyText">You said you're busy, so DoorIQ suggests a low-interruption option.</p></div></div>
-      <div class="rec-actions"><button id="markDone" class="done-btn">✓ Mark as reviewed</button><button id="saveRule" class="save-btn">☆ Save this preference</button></div>
-      <p id="actionStatus" class="action-status" aria-live="polite">No action taken — this is a recommendation only.</p>
+      <div class="why-box">
+        <span class="why-icon">◎</span>
+        <div><b>Why this suggestion?</b><p id="whyText">DoorIQ considers your selected preference.</p></div>
+      </div>
+      <div class="rec-actions">
+        <button id="markDone" class="done-btn">✓ Mark as reviewed</button>
+        <button id="saveRule" class="save-btn">☆ Save this preference</button>
+      </div>
+      <p id="actionStatus" class="action-status" aria-live="polite">No action taken — recommendation only.</p>
     </div>
   </div>
 </section>
 
+<!-- NEW: CONVERSATIONAL ASSISTANT -->
+<section class="assistant section" id="assistant">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">CONVERSATIONAL HOME ASSISTANT</p>
+      <h2>Ask DoorIQ</h2>
+      <p>Describe what's happening and get a suggestion based on your situation.</p>
+    </div>
+    <span class="live-tag">Simulation mode</span>
+  </div>
+
+  <div class="chat-card">
+    <div class="chat-intro">
+      <div class="chat-avatar">DQ</div>
+      <div>
+        <h3>Your doorstep assistant</h3>
+        <p>Ask a question in your own words.</p>
+      </div>
+    </div>
+
+    <div id="chatMessages" class="chat-messages" aria-live="polite">
+      <div class="chat-message assistant-message">
+        <b>DoorIQ</b>
+        <p>Hello! I can help you think through a delivery, an expected guest, an unknown visitor, or a doorbell event. What happened at your door?</p>
+      </div>
+    </div>
+
+    <p class="field-label">Try asking</p>
+    <div class="suggested-prompts">
+      <button type="button" class="prompt-btn" data-prompt="A delivery arrived and I'm busy">📦 Delivery while busy</button>
+      <button type="button" class="prompt-btn" data-prompt="An unknown visitor is at my door. Prioritize safety">🔔 Unknown visitor</button>
+      <button type="button" class="prompt-btn" data-prompt="My expected guest arrived and I'm available">👋 Expected guest</button>
+      <button type="button" class="prompt-btn" data-prompt="Someone rang the doorbell and I'm busy">🚪 Doorbell while busy</button>
+    </div>
+
+    <form id="chatForm" class="chat-form">
+      <label class="field-label" for="chatInput">Your message</label>
+      <div class="chat-input-row">
+        <input id="chatInput" type="text" maxlength="240" placeholder="e.g. A courier arrived while I'm busy..." required>
+        <button type="submit" class="primary-btn">Ask DoorIQ ↗</button>
+      </div>
+    </form>
+
+    <p class="tiny-note">This is a rule-based simulation, not a live Alexa service. It does not identify visitors or control locks.</p>
+  </div>
+</section>
+
 <section class="activity section">
-  <div class="section-heading compact"><div><p class="eyebrow">YOUR SESSION</p><h2>Recent demo activity</h2><p>Events you explore appear here during this session.</p></div><button id="clearHistory" class="secondary-btn">Clear history</button></div>
-  <div class="activity-card"><div class="activity-head"><span>EVENT</span><span>PREFERENCE</span><span>RECOMMENDATION</span><span>STATUS</span></div><div id="history"><div class="empty-history"><span>✧</span><b>Your activity will show up here</b><p>Try a scenario above to create your first demo event.</p></div></div></div>
+  <div class="section-heading compact">
+    <div><p class="eyebrow">YOUR SESSION</p><h2>Recent demo activity</h2><p>Events you explore appear here during this session.</p></div>
+    <button id="clearHistory" class="secondary-btn">Clear history</button>
+  </div>
+  <div class="activity-card">
+    <div class="activity-head"><span>EVENT</span><span>PREFERENCE</span><span>RECOMMENDATION</span><span>STATUS</span></div>
+    <div id="history">
+      <div class="empty-history"><span>✧</span><b>Your activity will show up here</b><p>Try a scenario above to create your first demo event.</p></div>
+    </div>
+  </div>
 </section>
 
 <section class="how section" id="how">
-  <div class="section-heading"><div><p class="eyebrow">SIMPLE BY DESIGN</p><h2>From notification to next step.</h2><p>A clearer way to think about everyday door events.</p></div></div>
-  <div class="steps"><article><span class="step-icon">01</span><h3>Receive an event</h3><p>An authorized integration can provide a doorbell event. This demo uses sample events.</p></article><article><span class="step-icon">02</span><h3>Understand context</h3><p>DoorIQ considers the selected event and your chosen household preference.</p></article><article><span class="step-icon">03</span><h3>Recommend an action</h3><p>You get a practical suggestion and remain in control of what happens next.</p></article></div>
+  <div class="section-heading">
+    <div><p class="eyebrow">SIMPLE BY DESIGN</p><h2>From notification to next step.</h2><p>A clearer way to think about everyday door events.</p></div>
+  </div>
+  <div class="steps">
+    <article><span class="step-icon">01</span><h3>Receive an event</h3><p>This demo uses sample doorbell events.</p></article>
+    <article><span class="step-icon">02</span><h3>Understand context</h3><p>DoorIQ considers the event and your household preference.</p></article>
+    <article><span class="step-icon">03</span><h3>Recommend an action</h3><p>You receive a suggestion and stay in control of what happens next.</p></article>
+  </div>
 </section>
-<section class="privacy-banner"><div class="privacy-symbol">◇</div><div><h3>Helpful by design. Careful by default.</h3><p>DoorIQ is a front-end prototype. It does not identify people, unlock doors, contact couriers, or connect to Ring hardware.</p></div><span class="privacy-chip">Privacy-first concept</span></section>
+
+<section class="privacy-banner">
+  <div class="privacy-symbol">◇</div>
+  <div><h3>Helpful by design. Careful by default.</h3><p>DoorIQ is a front-end simulation. It does not identify people, unlock doors, contact couriers, or connect to Alexa or Ring hardware.</p></div>
+  <span class="privacy-chip">Privacy-first concept</span>
+</section>
 </main>
-<footer><a class="brand footer-brand" href="#"><span class="brand-mark">D<span>Q</span></span><span>Door<span class="violet">IQ</span><small>SMART HOME ASSISTANT</small></span></a><span>Built as a student prototype · Simulated data only</span><a href="#workspace">Back to demo ↑</a></footer>
+
+<footer>
+  <a class="brand footer-brand" href="#"><span class="brand-mark">D<span>Q</span></span><span>Door<span class="violet">IQ</span><small>SMART HOME ASSISTANT</small></span></a>
+  <span>Student prototype · Simulated data only</span>
+  <a href="#assistant">Ask DoorIQ ↑</a>
+</footer>
+
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
